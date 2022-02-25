@@ -18,9 +18,7 @@ const Form = () => {
   });
 
   const formSchema = Yup.object().shape({
-    name: Yup.string()
-      .required("Required")
-      .min(2, "name must be at least 2 characters"),
+    name: Yup.string().min(2, "name must be at least 2 characters"),
     size: Yup.string(),
     sauce: Yup.string(),
     pepperoni: Yup.boolean(),
