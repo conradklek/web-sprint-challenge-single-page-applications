@@ -5,7 +5,7 @@ import Form from "./Form";
 
 const App = () => {
   return (
-    <Router>
+    <>
       <nav className="navbar">
         <h2 id="logo">COCO'S PIZZA!</h2>
         <li>
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/pizza" component={Form} />
         </Switch>
       </div>
-    </Router>
+    </>
   );
 };
 
