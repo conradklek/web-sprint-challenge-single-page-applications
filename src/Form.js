@@ -94,7 +94,7 @@ const Form = () => {
               <option value="3">3</option>
             </select>
           </div>
-          <div>
+          <div id="pizza-size">
             <label htmlFor="size-dropdown">Size:</label>
             <select name="size" id="size-dropdown" onChange={handleChange}>
               <option value="small">Small</option>
@@ -173,9 +173,7 @@ const Form = () => {
             ></textarea>
           </div>
           <div>
-            <button id="order-button" onClick={handleSubmit}>
-              Add to Order
-            </button>
+            <input type="submit" value="Submit" />
           </div>
         </section>
       </form>
