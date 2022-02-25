@@ -35,24 +35,33 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+
+useRouteMatch allows you to access the current route information,
+including the path, params, and url, history, and match objects.
+
 1. How would you explain form validation to someone who has never programmed before?
+
+Validation allows you to ensure that the data you enter is valid by checking for predetermined certain conditions.
+
 1. In 1-2 sentences, define end to end testing.
+
+End to end testing looks at the entire user experience of an application. It is a combination of user testing and system testing, where every aspect of the application is tested.
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Implement the project on the main branch, committing changes regularly
-- [ ] Push commits: `git push origin main`
-- [ ] PUSH EVERYTHING TO THE MAIN BRANCH
+- [x] Create a forked copy of this project
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Implement the project on the main branch, committing changes regularly
+- [x] Push commits: `git push origin main`
+- [x] PUSH EVERYTHING TO THE MAIN BRANCH
 
 ### Task 2: Project Requirements
 
 Your finished project must include all of the following requirements:
 
-- [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable but must have an id of "order-pizza")
+- [x] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable but must have an id of "order-pizza")
 - [ ] A order form that has a "/pizza" route and shows the form
 - [ ] A form with an id of "pizza-form"
 - [ ] A name text input field with an id of "name-input"
