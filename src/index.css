@@ -56,7 +56,8 @@ nav > li {
   list-style-type: none;
 }
 
-nav > li > a {
+nav > li > a,
+button {
   text-decoration: none;
   font-size: 1.2em;
   color: white;
@@ -64,6 +65,8 @@ nav > li > a {
   background: orangered;
   padding: 5px 10px 5px 10px;
   border-radius: 2px;
+  border: none;
+  cursor: pointer;
 }
 
 h1 {

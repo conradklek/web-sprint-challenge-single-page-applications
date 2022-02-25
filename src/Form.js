@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import * as Yup from "yup";
 import axios from "axios";
 
 const Form = () => {
   const [pizza, setPizza] = useState({
     name: "",
-    size: "small",
+    size: "",
     sauce: "red",
     pepperoni: false,
     sausage: false,
@@ -15,19 +16,56 @@ const Form = () => {
     special: "",
     quantity: 1,
   });
+
+  const formSchema = Yup.object().shape({
+    name: Yup.string()
+      .required("Required")
+      .min(2, "name must be at least 2 characters"),
+    size: Yup.string(),
+    sauce: Yup.string(),
+    pepperoni: Yup.boolean(),
+    sausage: Yup.boolean(),
+    mushrooms: Yup.boolean(),
+    olives: Yup.boolean(),
+    anchovies: Yup.boolean(),
+    extraCheese: Yup.boolean(),
+    special: Yup.string(),
+    quantity: Yup.number(),
+  });
+
+  const [errors, setErrors] = useState({});
+
   const handleChange = (event) => {
+    const { name, value } = event.target;
+    Yup.reach(formSchema, name)
+      .validate(value)
+      .then((valid) => {
+        setErrors({
+          ...errors,
+          [name]: "",
+        });
+      })
+      .catch((err) => {
+        setErrors({
+          ...errors,
+          [name]: err.errors[0],
+        });
+      });
     setPizza({
       ...pizza,
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (pizza.name.length < 2) {
-      alert("Name must be at least 2 characters");
-      return;
+      return setErrors({
+        name: "name must be at least 2 characters",
+      });
     }
     axios.post("https://reqres.in/api/orders", pizza).then((res) => {
+      console.log(res);
       console.table(res.data);
     });
   };
@@ -45,6 +83,7 @@ const Form = () => {
               onChange={handleChange}
             />
           </div>
+          {errors.name && <p>{errors.name}</p>}
           <div>
             <label htmlFor="quantity-dropdown">Quantity:</label>
             <select

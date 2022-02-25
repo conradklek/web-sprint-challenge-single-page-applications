@@ -7,14 +7,9 @@ const App = () => {
   return (
     <Router>
       <nav className="navbar">
-        <h2 id="logo">COCO'S PIZZERIA</h2>
+        <h2 id="logo">COCO'S PIZZA!</h2>
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link id="order-pizza" to="/pizza">
-            Pizza
-          </Link>
         </li>
       </nav>
       <div className="App">
